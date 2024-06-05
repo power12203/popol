@@ -101,10 +101,24 @@ const Header = (props) => {
             </div>
           ) : (
             <div className="right">
-              <Link to="/login" style={{ marginRight: "10px" }}>
+              <Link
+                to="/login"
+                style={{
+                  marginRight: "10px",
+                  color: "white",
+                  textDecoration: "none",
+                }}
+              >
                 로그인
               </Link>
-              <Link to="/register" style={{ marginRight: "5px" }}>
+              <Link
+                to="/register"
+                style={{
+                  marginRight: "5px",
+                  color: "white",
+                  textDecoration: "none",
+                }}
+              >
                 회원 가입
               </Link>
             </div>

@@ -10,8 +10,8 @@ const CalendarContainer = styled.div`
 
 const DropdownButton = styled.button`
   width: 200px;
-  height: 48px;
-  border: 0.8px solid var(--festie-gray-600, #949494);
+  height: 66px;
+  border: none;
   border-radius: 10px;
   padding: 0px 12px;
   color: var(--festie-gray-800, #3a3a3a);
@@ -20,7 +20,7 @@ const DropdownButton = styled.button`
   font-style: normal;
   font-weight: 500;
   line-height: 140%;
-  text-align: start;
+  text-align: center;
   appearance: none;
   background-color: white;
   background-repeat: no-repeat;
@@ -36,8 +36,8 @@ const CalendarWrapper = styled.div`
   display: ${(props) => (props.isOpen ? "block" : "none")};
 `;
 
-const CustomCalendar = ({ onChange, value }) => {
-  const [nowDate, setNowDate] = useState("날짜");
+const CustomCalendar = ({ onChange, value, placeholder }) => {
+  const [nowDate, setNowDate] = useState(placeholder);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleCalendar = () => {

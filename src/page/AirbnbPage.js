@@ -1,8 +1,53 @@
 import React, { useRef, useState } from "react";
 import Item from "../components/postList/Item";
 import Header from "../common/Header";
+import { TbZoom } from "react-icons/tb";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import styled from "styled-components";
+
+const Searchbarform = styled.form`
+  top: 30px;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  margin: auto;
+  border-radius: 32px;
+  height: 66px;
+  width: 700px;
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+`;
+const AccommodationList = styled.div`
+  margin-top: 50px;
+  display: block;
+`;
+const CityInput = styled.input`
+  margin-right: 2px;
+  border-radius: 32px;
+  border: none;
+  text-align: center;
+`;
+const SearchButton = styled.button`
+  padding: 16px;
+  position: relative;
+  margin: auto;
+  color: white;
+  width: 50px;
+  cursor: pointer;
+  display: inline-block;
+  background-color: #ff007f;
+  border-radius: 50%;
+  margin-left: 80px;
+  border: none;
+`;
+const ChecInput = styled.input`
+  margin-right: 2px;
+  border-radius: 32px;
+  cursor: pointer;
+  height: 66px;
+  border: none;
+  text-align: center;
+`;
 
 function AirbnbPage() {
   const [items, setItems] = useState();
@@ -53,18 +98,24 @@ function AirbnbPage() {
   return (
     <>
       <Header />
-      <form onSubmit={fetchAirbnb}>
-        <input type="text" placeholder="영어로 도시 입력" ref={ref} />
-        <p>
-          checkin
-          <input type="date" ref={ref2} />
-          checkout
-          <input type="date" ref={ref3} />
-        </p>
-        <button>검색</button>
-      </form>
-
-      {items && items.map((item) => <Item item={item} />)}
+      <div>
+        <Searchbarform onSubmit={fetchAirbnb}>
+          <CityInput type="text" placeholder="영어로 도시 입력" ref={ref} />
+          <p>
+            체크인
+            <ChecInput type="date" ref={ref2} />
+            체크아웃
+            <ChecInput type="date" ref={ref3} />
+          </p>
+          <SearchButton>
+            <TbZoom />
+          </SearchButton>
+        </Searchbarform>
+      </div>
+      {/* {items && items.map((item) => <Item item={item} />)} */}
+      <AccommodationList>
+        <Item />
+      </AccommodationList>
     </>
   );
 }
