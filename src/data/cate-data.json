@@ -1,7 +1,42 @@
-{
-  "extends": "@typicode",
-  "env": {
-    "browser": true,
-    "node": true
+[
+  {
+    "title": "Osaka Apartment",
+    "imageUrl": "/path/to/image1.jpg",
+    "description": "Some description"
+  },
+  {
+    "title": "Mountain View Hotel",
+    "imageUrl": "/path/to/image2.jpg",
+    "description": "Some description"
+  },
+  {
+    "title": "City Center Hostel",
+    "imageUrl": "/path/to/image3.jpg",
+    "description": "Some description"
+  },
+  {
+    "title": "Luxury Villa",
+    "imageUrl": "/path/to/image4.jpg",
+    "description": "Some description"
+  },
+  {
+    "title": "Cozy Cabin",
+    "imageUrl": "/path/to/image5.jpg",
+    "description": "Some description"
+  },
+  {
+    "title": "Beach House",
+    "imageUrl": "/path/to/image6.jpg",
+    "description": "Some description"
+  },
+  {
+    "title": "Riverside Lodge",
+    "imageUrl": "/path/to/image7.jpg",
+    "description": "Some description"
+  },
+  {
+    "title": "Mountain Retreat",
+    "imageUrl": "/path/to/image8.jpg",
+    "description": "Some description"
   }
-}
+]

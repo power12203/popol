@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
 import CustomCalendar from "../components/auth/CustomCalendar"; // 경로를 적절하게 수정하세요
+import data from "../data/cate-data.json"; // 데이터 파일 import
 
 const Searchbarform = styled.form`
   top: 30px;
@@ -62,11 +63,28 @@ const Label = styled.span`
 function NewPage() {
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
-  const [roomGuests, setRoomGuests] = useState(1); // 객실인원 초기값 1로 설정
+  const [roomGuests, setRoomGuests] = useState(1);
+  const [cityName, setCityName] = useState(""); // 도시명 상태 추가
+  const [filteredItems, setFilteredItems] = useState([]); // 필터링된 아이템 상태 추가
+  const [searchClicked, setSearchClicked] = useState(false); // 검색 버튼 클릭 여부 상태 추가
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 검색 버튼 클릭 시 실행할 로직을 여기에 추가하세요.
+    // 입력된 도시명으로 아이템 필터링
+    const filtered = data.filter((item) =>
+      item.title.toLowerCase().includes(cityName.toLowerCase())
+    );
+    setFilteredItems(filtered);
+    setSearchClicked(true);
+  };
+
+  const handleCalendarChange = (date, type) => {
+    if (type === "checkin") {
+      setCheckInDate(date);
+    } else if (type === "checkout") {
+      setCheckOutDate(date);
+    }
+    setSearchClicked(null); // 날짜가 변경될 때는 검색 클릭 상태를 초기화
   };
 
   return (
@@ -74,17 +92,24 @@ function NewPage() {
       <Header />
       <div>
         <Searchbarform onSubmit={handleSubmit}>
-          <CityInput type="text" placeholder="영어로 도시 입력" />
-          <CustomCalendar
-            onChange={setCheckInDate}
-            value={checkInDate}
-            placeholder="체크인"
+          <CityInput
+            type="text"
+            placeholder="영어로 도시 입력"
+            value={cityName}
+            onChange={(e) => setCityName(e.target.value)}
           />
-          <CustomCalendar
-            onChange={setCheckOutDate}
-            value={checkOutDate}
-            placeholder="체크아웃"
-          />
+          <DateSection>
+            <CustomCalendar
+              onChange={(date) => handleCalendarChange(date, "checkin")}
+              value={checkInDate}
+              placeholder="체크인"
+            />
+            <CustomCalendar
+              onChange={(date) => handleCalendarChange(date, "checkout")}
+              value={checkOutDate}
+              placeholder="체크아웃"
+            />
+          </DateSection>
           <span style={{ margin: "auto" }}>객실인원</span>
           <PersonInput
             type="number"
@@ -93,13 +118,15 @@ function NewPage() {
             onChange={(e) => setRoomGuests(e.target.value)}
           />
           <Label>명</Label>
-          <SearchButton onClick={handleSubmit}>
+          <SearchButton type="submit">
             <TbZoom />
           </SearchButton>
         </Searchbarform>
       </div>
       <AccommodationList>
-        <Item />
+        {/* 검색 버튼을 클릭한 경우에만 필터링된 아이템을 뿌려줍니다 */}
+        {searchClicked &&
+          filteredItems.map((item, index) => <Item key={index} item={item} />)}
       </AccommodationList>
     </>
   );
