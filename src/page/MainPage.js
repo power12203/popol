@@ -7,6 +7,7 @@ import Header from "../common/Header";
 import Slide from "../components/mian/Slide";
 import Iodging from "../components/mian/Iodging";
 import RegionList from "../components/mian/RegionList";
+import Footer from "../common/Footer";
 
 const Mains = styled.header`
   background-color: white;
@@ -72,6 +73,7 @@ function MainPage() {
           }
         />
       </Routes>
+      <Footer />
     </>
   );
 }

@@ -107,9 +107,9 @@ function Item({ item }) {
         </div>
       </div>
       <div class="card">
-        <Img src={tnrth3} class="card-img-top" alt="..." />
+        <Img src={tnrth2} class="card-img-top" alt="..." />
         <div class="card-body">
-          <h5 class="card-title">Hotel Forza Osaka Kitahama</h5>
+          <h5 class="card-title">소테츠 프레사 인 오사카-요도야바시</h5>
           <p class="card-text">
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
@@ -120,9 +120,12 @@ function Item({ item }) {
         </div>
       </div>
       <div class="card">
-        <Img src={tnrth3} class="card-img-top" alt="..." />
+        <Img src={tnrth} class="card-img-top" alt="..." />
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <h5 class="card-title">
+            APA 호텔 앤 리조트 오사카 우메다 에키 타워 (APA Hotel & Resort Osaka
+            Umeda Eki Tower)
+          </h5>
           <p class="card-text">
             Some quick example text to build on the card title and make up the
             bulk of the card's content.

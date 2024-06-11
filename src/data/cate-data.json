@@ -1,42 +1,30 @@
 [
   {
-    "title": "Osaka Apartment",
-    "imageUrl": "/path/to/image1.jpg",
-    "description": "Some description"
+    "id": 1,
+    "name": "Osaka",
+    "location": {
+      "city": "Barcelona",
+      "country": "Spain"
+    },
+    "price_per_night": 120,
+    "review_count": 250,
+    "rating": 4.5,
+    "type": "Apartment",
+    "amenities": ["Wi-Fi", "Parking", "Breakfast", "Pool"],
+    "image_url": "/path/to/image1.jpg"
   },
   {
-    "title": "Mountain View Hotel",
-    "imageUrl": "/path/to/image2.jpg",
-    "description": "Some description"
-  },
-  {
-    "title": "City Center Hostel",
-    "imageUrl": "/path/to/image3.jpg",
-    "description": "Some description"
-  },
-  {
-    "title": "Luxury Villa",
-    "imageUrl": "/path/to/image4.jpg",
-    "description": "Some description"
-  },
-  {
-    "title": "Cozy Cabin",
-    "imageUrl": "/path/to/image5.jpg",
-    "description": "Some description"
-  },
-  {
-    "title": "Beach House",
-    "imageUrl": "/path/to/image6.jpg",
-    "description": "Some description"
-  },
-  {
-    "title": "Riverside Lodge",
-    "imageUrl": "/path/to/image7.jpg",
-    "description": "Some description"
-  },
-  {
-    "title": "Mountain Retreat",
-    "imageUrl": "/path/to/image8.jpg",
-    "description": "Some description"
+    "id": 2,
+    "name": "Mountain View Hotel",
+    "location": {
+      "city": "Denver",
+      "country": "USA"
+    },
+    "price_per_night": 180,
+    "review_count": 320,
+    "rating": 4.7,
+    "type": "Hotel",
+    "amenities": ["Wi-Fi", "Parking", "Gym", "Restaurant"],
+    "image_url": "/path/to/image2.jpg"
   }
 ]
