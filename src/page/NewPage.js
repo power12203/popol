@@ -130,6 +130,7 @@ function NewPage() {
           <Item key={index} item={item} />
         ))}
       </AccommodationList>
+      <Footer />
     </>
   );
 }

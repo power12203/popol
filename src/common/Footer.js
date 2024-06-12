@@ -62,13 +62,13 @@ const Footer = () => {
         <div className="footer-section">
           <h4>소셜 미디어</h4>
           <div className="social-icons">
-            <a href="#">
+            <a href="https://www.facebook.com">
               <img src={facebookIcon} alt="Facebook" />
             </a>
-            <a href="#">
+            <a href="https://www.twitter.com">
               <img src={twitterIcon} alt="Twitter" />
             </a>
-            <a href="#">
+            <a href="https://www.instagram.com">
               <img src={instagramIcon} alt="Instagram" />
             </a>
           </div>
