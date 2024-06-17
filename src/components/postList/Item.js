@@ -1,141 +1,134 @@
 import React from "react";
 import styled from "styled-components";
-import tnrth from "../../cityImage/62c9fe6b0c60bb410d6e4ac35d49d37d.webp";
-import tnrth2 from "../../cityImage/City-guides_Osaka_7-best-budget-hotels_Sotetsu-Fresa-Inn-Osaka-Yodoyabashi1.jpg";
-import tnrth3 from "../../cityImage/e7d0a7480de494b6b40eb4098197fb50.webp";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+// import tnrth from "../../cityImage/62c9fe6b0c60bb410d6e4ac35d49d37d.webp";
+// import tnrth2 from "../../cityImage/City-guides_Osaka_7-best-budget-hotels_Sotetsu-Fresa-Inn-Osaka-Yodoyabashi1.jpg";
+// import tnrth3 from "../../cityImage/e7d0a7480de494b6b40eb4098197fb50.webp";
 
-const DlatlDiv = styled.div`
+const Img = styled.img`
+  height: 250px;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-left: -0px;
+`;
+
+const CardDiv = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
   margin-top: 20px;
   .card {
     border: none;
   }
-`;
-const Img = styled.img`
-  height: 180px;
-  width: 450px;
-  border-radius: 10px;
+  .slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+  }
+  .slick-dots {
+    position: absolute;
+    bottom: 40px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+  }
+  .slick-dots li button:before {
+    font-family: "slick";
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: "•";
+    text-align: center;
+    opacity: 0.5;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 `;
 
-function Item({ item }) {
+const Card = styled.div`
+  width: 19rem;
+  height: auto;
+  margin-left: 20px;
+`;
+
+function Item({ items }) {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  const Cardbody = styled.div`
+    height: 200px;
+    p {
+      font-size: 15px;
+      height: 1px;
+    }
+  `;
   return (
-    <DlatlDiv>
-      <div class="card">
-        <Img src={tnrth} class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">
-            APA 호텔 앤 리조트 오사카 우메다 에키 타워 (APA Hotel & Resort Osaka
-            Umeda Eki Tower)
-          </h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">
-            Go somewhere
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <Img src={tnrth2} class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">소테츠 프레사 인 오사카-요도야바시</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">
-            Go somewhere
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <Img src={tnrth3} class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Hotel Forza Osaka Kitahama</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">
-            Go somewhere
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <Img src={tnrth3} class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">
-            Go somewhere
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <Img src={tnrth} class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">
-            APA 호텔 앤 리조트 오사카 우메다 에키 타워 (APA Hotel & Resort Osaka
-            Umeda Eki Tower)
-          </h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">
-            Go somewhere
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <Img src={tnrth2} class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">소테츠 프레사 인 오사카-요도야바시</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">
-            Go somewhere
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <Img src={tnrth2} class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">소테츠 프레사 인 오사카-요도야바시</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">
-            Go somewhere
-          </a>
-        </div>
-      </div>
-      <div class="card">
-        <Img src={tnrth} class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">
-            APA 호텔 앤 리조트 오사카 우메다 에키 타워 (APA Hotel & Resort Osaka
-            Umeda Eki Tower)
-          </h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">
-            Go somewhere
-          </a>
-        </div>
-      </div>
-    </DlatlDiv>
+    <CardDiv>
+      {items.data.list.map((item, index) => (
+        <Card className="card" key={index}>
+          <Slider {...settings}>
+            {item.listing.contextualPictures.map((picture, picIndex) => (
+              <div key={picIndex}>
+                <Img
+                  src={picture.picture}
+                  alt={
+                    picture.caption
+                      ? picture.caption.messages.join(", ")
+                      : "Image"
+                  }
+                />
+                {picture.caption && (
+                  <div>
+                    {picture.caption.messages.map((message, msgIndex) => (
+                      <p key={msgIndex}>{message}</p>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </Slider>
+          <Cardbody className="card-body">
+            <h5 className="card-title">{item.listing.name}</h5>
+            <p className="card-text">City: {item.listing.city}</p>
+            <p className="card-text">
+              Average Rating: {item.listing.avgRatingLocalized}
+            </p>
+            <p className="card-text">
+              Total:{" "}
+              {item.pricingQuote.structuredStayDisplayPrice.primaryLine.price}
+            </p>
+            <div>
+              {item.pricingQuote.structuredStayDisplayPrice.explanationData.priceDetails[0].items.map(
+                (detail, detailIndex) => (
+                  <p key={detailIndex} className="card-text">
+                    {detail.description}: {detail.priceString}
+                  </p>
+                )
+              )}
+            </div>
+          </Cardbody>
+        </Card>
+      ))}
+    </CardDiv>
   );
 }
 

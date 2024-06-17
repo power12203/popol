@@ -5,6 +5,7 @@ import { TbZoom } from "react-icons/tb";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
+import { data } from "../components/mian/airbnb";
 
 const Searchbarform = styled.form`
   top: 30px;
@@ -56,45 +57,51 @@ function AirbnbPage() {
   const ref2 = useRef();
   const ref3 = useRef();
 
-  const API_KEY = "07d4ed62d1mshefab5b224a1aea4p1ada03jsn191c1f72699b";
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": API_KEY,
-      "X-RapidAPI-Host": "airbnb19.p.rapidapi.com",
-    },
-  };
-
-  const fetchAirbnb = async (e) => {
+  const fetchAirbnb = (e) => {
     e.preventDefault();
-    console.log("city", ref.current.value);
-    console.log("checkin", ref2.current.value);
-    console.log("checkout", ref3.current.value);
-    // console.log("totalRecords", ref2.current.value);
-    // console.log("currency", ref3.current.value);
-    // console.log("adults", ref4.current.value);
-
-    const city = ref.current.value;
-    const checkin = ref2.current.value;
-    const checkout = ref3.current.value;
-    // const totalRecords = ref2.current.value;
-    // const currency = ref3.current.value;
-    // const adults = ref4.current.value;
-
-    const url = `https://airbnb19.p.rapidapi.com/api/v1/searchPropertyByLocationV2?location=${city}&checkin=${checkin}&checkout=${checkout}`;
-
-    try {
-      const response = await fetch(url, options);
-      if (!response.ok) {
-        throw new Error("Fail to fetch airbnb data");
-      }
-      const result = await response.json();
-      console.log(result.data.list);
-      setItems(result.data.list);
-    } catch (error) {
-      console.error(error);
-    }
+    setItems(data);
+    console.log(data);
   };
+
+  // const API_KEY = "07d4ed62d1mshefab5b224a1aea4p1ada03jsn191c1f72699b";
+  // const options = {
+  //   method: "GET",
+  //   headers: {
+  //     "X-RapidAPI-Key": API_KEY,
+  //     "X-RapidAPI-Host": "airbnb19.p.rapidapi.com",
+  //   },
+  // };
+
+  // const fetchAirbnb = async (e) => {
+  //   e.preventDefault();
+  //   console.log("city", ref.current.value);
+  //   console.log("checkin", ref2.current.value);
+  //   console.log("checkout", ref3.current.value);
+  // console.log("totalRecords", ref2.current.value);
+  // console.log("currency", ref3.current.value);
+  // console.log("adults", ref4.current.value);
+
+  // const city = ref.current.value;
+  // const checkin = ref2.current.value;
+  // const checkout = ref3.current.value;
+  // const totalRecords = ref2.current.value;
+  // const currency = ref3.current.value;
+  // const adults = ref4.current.value;
+
+  // const url = `https://airbnb19.p.rapidapi.com/api/v1/searchPropertyByLocationV2?location=${city}&checkin=${checkin}&checkout=${checkout}`;
+
+  //   try {
+  //     const response = await fetch(url, options);
+  //     if (!response.ok) {
+  //       throw new Error("Fail to fetch airbnb data");
+  //     }
+  //     const result = await response.json();
+  //     console.log(result.data.list);
+  //     setItems(result.data.list);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
   return (
     <>
       <Header />
@@ -113,9 +120,8 @@ function AirbnbPage() {
         </Searchbarform>
       </div>
       {/* {items && items.map((item) => <Item item={item} />)} */}
-      <AccommodationList>
-        <Item />
-      </AccommodationList>
+      <AccommodationList>{items && <Item items={items} />}</AccommodationList>
+      {/* &&조건부 렌더링 */}
     </>
   );
 }

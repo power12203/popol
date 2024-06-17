@@ -34,7 +34,7 @@ Profolio는 개발자를 위한, 쉽고 빠르게 제작 할 수 있는 정적 �
 2. repository를 clone하여 로컬로 내려받습니다.
 
    ```
-   git clone {저장소URL}
+   https://github.com/power12203/popol?tab=readme-ov-file
    ```
 
 3. 내용을 원하는대로 수정합니다.

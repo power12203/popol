@@ -9,14 +9,15 @@ import MainPage from "./page/MainPage";
 import Iodging from "./components/mian/Iodging";
 import Airbnb from "./page/AirbnbPage";
 import NewPage from "./page/NewPage";
+import AirbnbPage from "./page/AirbnbPage";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<MainPage />} />
       <Route path="/post" element={<PostListPage />} />
-      <Route path="/tnrth" element={<NewPage />} />
-      <Route path="/airbnb" element={<NewPage />} />
+      <Route path="/tnrth" element={<AirbnbPage />} />
+      <Route path="/airbnb" element={<AirbnbPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/write" element={<WritePage />} />
