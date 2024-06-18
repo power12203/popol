@@ -16,7 +16,7 @@ function App() {
     <Routes>
       <Route path="/" element={<MainPage />} />
       <Route path="/post" element={<PostListPage />} />
-      <Route path="/tnrth" element={<AirbnbPage />} />
+      <Route path="/tnrth" element={<NewPage />} />
       <Route path="/airbnb" element={<AirbnbPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />

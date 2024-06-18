@@ -8,7 +8,7 @@ import Card from "./Card";
 import Head from "./Head";
 import { Link } from "react-router-dom";
 const Slidebox = styled.div`
-  width: 1250px;
+  width: 100%;
   height: 100%;
   margin: 10px auto;
   margin-top: 5px;

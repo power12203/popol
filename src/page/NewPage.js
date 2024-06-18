@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Item from "../components/postList/Item";
 import Header from "../common/Header";
 import { TbZoom } from "react-icons/tb";
@@ -6,8 +6,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
 import CustomCalendar from "../components/auth/CustomCalendar"; // 경로를 적절하게 수정하세요
-import data from "../data/cate-data.json"; // 데이터 파일 import
+// import data from "../data/cate-data.json"; // 데이터 파일 import
 import Footer from "../common/Footer";
+import { data } from "../components/mian/airbnb";
 
 const Searchbarform = styled.form`
   top: 30px;
@@ -65,50 +66,62 @@ const Label = styled.span`
 function NewPage() {
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
-  const [roomGuests, setRoomGuests] = useState(1);
+  // const [roomGuests, setRoomGuests] = useState(1);
   const [cityName, setCityName] = useState("");
-  const [filteredItems, setFilteredItems] = useState([]);
+  // const [filteredItems, setFilteredItems] = useState([]);
 
-  const handleSubmit = async (e) => {
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await fetch("/api/search", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         cityName,
+  //         checkInDate,
+  //         checkOutDate,
+  //         roomGuests,
+  //       }),
+  //     });
+  //     const result = await response.json();
+  //     setFilteredItems(result);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // };
+  const [items, setItems] = useState();
+
+  const ref = useRef();
+  const ref2 = useRef();
+  const ref3 = useRef();
+
+  const fetchAirbnb = (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch("/api/search", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          cityName,
-          checkInDate,
-          checkOutDate,
-          roomGuests,
-        }),
-      });
-      const result = await response.json();
-      setFilteredItems(result);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
+    setItems(data);
+    console.log(data);
   };
-
   return (
     <>
       <Header />
       <div>
-        <Searchbarform onSubmit={handleSubmit}>
+        <Searchbarform onSubmit={fetchAirbnb}>
           <CityInput
             type="text"
             placeholder="영어로 도시 입력"
             value={cityName}
-            onChange={(e) => setCityName(e.target.value)}
+            ref={ref}
           />
           <CustomCalendar
-            onChange={(date) => setCheckInDate(date)}
+            ref={ref2}
+            onChange={setCheckInDate}
             value={checkInDate}
             placeholder="체크인"
           />
           <CustomCalendar
-            onChange={(date) => setCheckOutDate(date)}
+            ref={ref3}
+            onChange={setCheckOutDate}
             value={checkOutDate}
             placeholder="체크아웃"
           />
@@ -116,8 +129,8 @@ function NewPage() {
           <PersonInput
             type="number"
             min="1"
-            value={roomGuests}
-            onChange={(e) => setRoomGuests(e.target.value)}
+            // value={roomGuests}
+            // onChange={(e) => setRoomGuests(e.target.value)}
           />
           <Label>명</Label>
           <SearchButton type="submit">
@@ -125,11 +138,9 @@ function NewPage() {
           </SearchButton>
         </Searchbarform>
       </div>
-      <AccommodationList>
-        {filteredItems.map((item, index) => (
-          <Item key={index} item={item} />
-        ))}
-      </AccommodationList>
+      <div style={{ height: "1000px" }}>
+        <AccommodationList>{items && <Item items={items} />}</AccommodationList>
+      </div>
       <Footer />
     </>
   );
