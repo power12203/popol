@@ -12,6 +12,8 @@
 - project page
   <img src="https://github.com/power12203/popol/assets/160206287/74bb72ce-54d1-46d9-9e9e-9aa791343eb4" width="600" height="400"/>
 
+  <iframe width="956" height="538" src="https://www.youtube.com/embed/ozv4q2ov3Mk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
+
 ## 기능
 
 - 로그인/회원가입
