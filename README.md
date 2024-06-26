@@ -7,7 +7,7 @@
 ## Ui소개
 
 ![Home Page](https://github.com/power12203/popol/assets/160206287/9798becf-df75-4e2a-8dee-fed13f7bac69)
-![Project Page](./src/assets/footerImg/React%20App%20-%20Chrome%202024-06-26%2015-48-18.mp4)
+![Project Page](https://github.com/power12203/popol/assets/160206287/7aa7e8d7-7adf-4324-94d3-bae1ad12e1ea)
 
 ## 기능
 
