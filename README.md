@@ -19,21 +19,13 @@
 - 게시판 기능
 - 글쓰기 수정 삭제
 
-## Installation and Usage
+## 설치및 실행 방법
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/your-repo.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd your-repo
-   ```
-3. Install dependencies:
+1. Install dependencies:
    ```bash
    npm install
    ```
-4. Start the development server:
+2. Start the development server:
    ```bash
    npm start
    ```
@@ -46,8 +38,8 @@
 ## Tech Stack
 
 - HTML
-- CSS (Sass)
-- JavaScript (ES6+)
+- CSS
+- JavaScript
 - React.js
 - Redux
 - Webpack
