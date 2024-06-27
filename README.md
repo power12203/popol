@@ -32,8 +32,9 @@
 
 ### 7. 기술 스택 (Tech Stack)
 
-리덕스(Redux)https://github.com/power12203/Redux-main
-api
+- 리덕스(Redux)https://github.com/power12203/Redux-main
+
+- api
 
 ```markdown
 ## Tech Stack
