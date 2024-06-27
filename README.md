@@ -30,6 +30,20 @@
    npm start
    ```
 
+## 프로젝트 구조
+
+/
+|-- public/
+| |-- index.html
+|-- src/
+| |-- components/
+| |-- pages/
+| |-- styles/
+| |-- App.js
+| |-- index.js
+|-- package.json
+|-- README.md
+
 ### 7. 기술 스택 (Tech Stack)
 
 사용된 주요 기술과 라이브러리를 나열합니다.
