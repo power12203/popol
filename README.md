@@ -32,7 +32,8 @@
 
 ### 7. 기술 스택 (Tech Stack)
 
-사용된 주요 기술과 라이브러리를 나열합니다.
+리덕스(Redux)https://github.com/power12203/Redux-main
+api
 
 ```markdown
 ## Tech Stack
