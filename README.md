@@ -45,9 +45,9 @@
 - Webpack
 ```
 
+```markdown
 ## 프로젝트 구조
 
-/
 |-- public/
 | |-- index.html
 |-- src/
@@ -58,3 +58,4 @@
 | |-- index.js
 |-- package.json
 |-- README.md
+```
