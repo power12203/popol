@@ -39,7 +39,6 @@
 - JavaScript
 - React.js
 - [Redux](https://github.com/power12203/Redux-main)
-- Webpack
 
 ```markdown
 ## 프로젝트 구조
