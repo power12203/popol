@@ -32,7 +32,6 @@
 
 ### 7. 기술 스택 (Tech Stack)
 
-```markdown
 ## Tech Stack
 
 - HTML
@@ -41,7 +40,6 @@
 - React.js
 - [Redux](https://github.com/power12203/Redux-main)
 - Webpack
-```
 
 ```markdown
 ## 프로젝트 구조
