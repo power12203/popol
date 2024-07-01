@@ -32,10 +32,6 @@
 
 ### 7. 기술 스택 (Tech Stack)
 
-- 리덕스(Redux)https://github.com/power12203/Redux-main
-
-- api
-
 ```markdown
 ## Tech Stack
 
@@ -43,7 +39,7 @@
 - CSS
 - JavaScript
 - React.js
-- Redux
+- Redux https://github.com/power12203/Redux-main
 - Webpack
 ```
 
@@ -53,9 +49,21 @@
 |-- public/
 | |-- index.html
 |-- src/
+| |-- assets/
+| | |--footerImg/푸터에있는 소셜이미지
+| |-- common/레이아웃 구성
 | |-- components/
-| |-- pages/
-| |-- styles/
+| | |-- auth/로그인/회원가입
+| | |-- main/메인 구성
+| | |-- post/게시판구성
+| | |-- postList/게시판리스트
+| | |-- write/글쓰기구성
+| |-- data/데이터 json
+| |-- imag/메인 아래 슬라이드 이미지
+| |-- img/메인 카드리스트 이미지
+| |-- modules/
+| | |-- api/
+| |-- page/페이지구성
 | |-- App.js
 | |-- index.js
 |-- package.json
