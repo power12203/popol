@@ -39,7 +39,7 @@
 - CSS
 - JavaScript
 - React.js
-- Redux https://github.com/power12203/Redux-main
+- [Redux](https://github.com/power12203/Redux-main)
 - Webpack
 ```
 
