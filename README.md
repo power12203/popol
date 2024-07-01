@@ -59,7 +59,7 @@
 | |-- data/데이터 json
 | |-- imag/메인 아래 슬라이드 이미지
 | |-- img/메인 카드리스트 이미지
-| |-- modules/
+| |-- modules/Redux
 | | |-- api/
 | |-- page/페이지구성
 | |-- App.js
