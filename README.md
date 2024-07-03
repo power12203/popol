@@ -21,7 +21,7 @@
 
 ## 설치및 실행 방법
 
-[서버 실행](https://github.com/power12203/server)
+[서버 실행 code](https://github.com/power12203/server)
 
 1. Install dependencies:
    ```bash
